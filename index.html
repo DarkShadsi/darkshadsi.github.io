@@ -2,121 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vincent | Portfolio</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="Logo">
+<header>
+    <div class="logo">
+        <img src="assets/images/logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home">
+        <div class="hero-content">
+            <h1>Hi, I’m Vincent.</h1>
+            <h2>Computer Science Student and Developer</h2>
+            <p>
+                Focused on building clean applications,
+                analyzing data, and finding efficient solutions
+                to complex logic problems.
+            </p>
+            <a href="#contact" class="btn-cta">
+                <span class="icon">✉</span> CONTACT ME ➔
+            </a>
         </div>
 
-        <nav>
-            <ul>
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-
-        <section id="home">
-            <div class="hero-content">
-                <h1>Hi, I’m Vincent.</h1>
-                <h2>Computer Science Student and Developer</h2>
-                <p>
-                    Focused on building clean applications,
-                    analyzing data, and finding efficient solutions
-                    to complex logic problems.
-                </p>
-                <a href="#contact" class="btn-cta">
-                    <span class="icon">✉</span> CONTACT ME ➔
-                </a>
-            </div>
-
-            <div class="hero-avatar">
+        <div class="hero-avatar">
+            <div class="avatar-circle">
                 <img src="assets/images/logo.png" alt="profile">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a 3rd-year Computer Science Student studying
-                at University of the Philippines Tacloban who likes
-                building practical software. Right now I am still
-                exploring the vast landscape of technology. Here
-                are a few technologies I’ve been working with:
-            </p>
-            <div class="tech-stack">
-                <img src="assets/images/c-icon.png" alt="C icon.">
-                <img src="assets/images/mysql-icon.png" alt="MySQL icon.">
-                <img src="assets/images/java-icon.png" alt="Java icon.">
-                <img src="assets/images/html-icon.png" alt="HTML icon.">
-                <img src="assets/images/css-icon.png" alt="CSS icon.">
-            </div>
-        </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a 3rd-year Computer Science Student studying
+            at University of the Philippines Tacloban who likes
+            building practical software. Right now I am still
+            exploring the vast landscape of technology. Here
+            are a few technologies I’ve been working with:
+        </p>
+        <div class="tech-stack">
+            <img src="assets/images/c-icon.png" alt="C icon.">
+            <img src="assets/images/mysql-icon.png" alt="MySQL icon.">
+            <img src="assets/images/java-icon.png" alt="Java icon.">
+            <img src="assets/images/html-icon.png" alt="HTML icon.">
+            <img src="assets/images/css-icon.png" alt="CSS icon.">
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="project-slider-container">
-                <a href="#" class="slider-arrow arrow-left" aria-label="Previous Project"><img src="assets/images/prev-button.png" alt="Previous Project"></a>
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Project Title</h3>
-                        <p>
-                            A description of the software.
-                            Its purpose, tech stack, and
-                            other related info.
-                        </p>
-                        <a href="#" class="btn-visit">
-                            <span class="icon">🔗</span> visit
-                        </a>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-slider-container">
+            <a href="#" class="slider-arrow arrow-left" aria-label="Previous Project">
+                <img src="assets/images/prev-button.png" alt="Previous Project">
+            </a>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p>
+                        A description of the software.
+                        Its purpose, tech stack, and
+                        other related info.
+                    </p>
+                    <a href="#" class="btn-visit">
+                        <span class="icon">🔗</span> visit
+                    </a>
+                </div>
+
+                <div class="project-gallery">
+                    <div class="main-preview">
+                        <img src="assets/images/project1-image1.png" alt="Project one main preview.">
                     </div>
-                    <div class="project-gallery">
-                        <div class="main-preview">
-                            <img src="assets/images/project1-image1.png" alt="Project one main preview.">
-                        </div>
-                        <div class="thumbnail-grid">
-                            <img src="assets/images/project1-image2.png" alt="Project one preview 2.">
-                            <img src="assets/images/project1-image3.png" alt="Project one preview 3.">
-                        </div>
+                    <div class="thumbnail-grid">
+                        <img src="assets/images/project1-image2.png" alt="Project one preview 2.">
+                        <img src="assets/images/project1-image3.png" alt="Project one preview 3.">
                     </div>
                 </div>
-                <a href="#" class="slider-arrow right-arrow" aria-label="Next Project"><img src="assets/images/next-button.png" alt="Next Project"></a>
             </div>
-        </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>
-                You can reach me through
-                the following socials. I will
-                respond as soon as possible.
-            </p>
-            <div class="socials-container">
-                <div class="social-card">
-                    <a href="#" target="_blank"><img src="assets/images/linkedin-icon.png" alt="LinkedIn icon"></a>
-                    <a href="#" target="_blank">Vincent Depaudhon</a>
-                </div>
-                <div class="social-card">
-                    <a href="mailto:depaudhonvincent24@gmail.com"><img src="assets/images/email-icon.png" alt="Email Icon"></a>
-                    <a href="mailto:depaudhonvincent24@gmail.com">depaudhonvincent24@gmail.com</a>
-                </div>
-                <div class="social-card">
-                    <a href="#" target="_blank"><img src="assets/images/messenger-icon.png" alt="Messenger Icon"></a>
-                    <a href="#" target="_blank">Epoyss.13</a>
-                </div>
+            <a href="#" class="slider-arrow right-arrow" aria-label="Next Project">
+                <img src="assets/images/next-button.png" alt="Next Project">
+            </a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>
+            You can reach me through
+            the following socials. I will
+            respond as soon as possible.
+        </p>
+        <div class="socials-container">
+            <div class="social-card">
+                <a href="#" target="_blank"><img src="assets/images/linkedin-icon.png" alt="LinkedIn icon"></a>
+                <a href="#" target="_blank">Vincent Depaudhon</a>
             </div>
-        </section>
+            <div class="social-card">
+                <a href="mailto:depaudhonvincent24@gmail.com"><img src="assets/images/email-icon.png" alt="Email Icon"></a>
+                <a href="mailto:depaudhonvincent24@gmail.com">depaudhonvincent24@gmail.com</a>
+            </div>
+            <div class="social-card">
+                <a href="#" target="_blank"><img src="assets/images/messenger-icon.png" alt="Messenger Icon"></a>
+                <a href="#" target="_blank">Epoyss.13</a>
+            </div>
+        </div>
+    </section>
+</main>
 
-    </main>
+<footer>
+    <div class="footer-content">
+        <hr class="footer-line">
+        <div class="footer-bottom">
+            <a href="https://github.com" target="_blank" class="github-icon">
+                <img src="assets/images/github-icon.png" alt="GitHub">
+            </a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

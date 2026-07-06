@@ -49,10 +49,6 @@ header {
     background-color: var(--bg-color);
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-}
 .logo img {
     width: 55px;
     height: 55px;
@@ -97,7 +93,7 @@ nav ul li a:hover {
 
 .hero-content h2 {
     font-size: 1.6rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     margin-bottom: 24px;
     font-weight: 400;
 }
@@ -109,20 +105,51 @@ nav ul li a:hover {
     font-size: 1.05rem;
 }
 
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    gap: 8px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 .hero-avatar {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.hero-avatar img {
+/*
+.avatar-circle {
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    padding: 20px;
     width: 380px;
     height: 380px;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*/
+
+.avatar-circle img {
+    width: 380px;
+    height: 380px;
+    object-fit: contain;
 }
 
 /******** ABOUT SECTION ********/
-#about{
+#about {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,8 +183,11 @@ nav ul li a:hover {
 .tech-stack img {
     height: 60px;
     width: auto;
-    filter: grayscale(20%);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.tech-stack img:hover {
+    transform: scale(1.1);
 }
 
 /******** PROJECTS SECTION *****/
@@ -173,59 +203,81 @@ nav ul li a:hover {
 #projects h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    text-align: left;
 }
 
 .project-slider-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    min-height: 30vh;
-    padding: 0 8%;
-    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    gap: 40px;
+}
+
+.slider-arrow img {
+    width: 35px;
+    height: auto;
 }
 
 .project-card {
+    background-color: var(--card-bg);
     border: 2px solid var(--accent-color);
     border-radius: 30px;
     display: flex;
-    max-width: 450px;
-    padding: 3% 3%;
+    flex: 1;
+    max-width: 850px;
+    padding: 40px;
+    gap: 40px;
 }
 
 .project-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-info h3 {
-    font-size: 1.7rem;
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.project-info p {
-    text-align: left;
-    color: var(--text-secondary);
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
-.project-gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2% 2%;
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    font-size: 1.05rem;
 }
 
-.main-preview {
+/* Missing Visit Button Style */
+.btn-visit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: #000000;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    width: fit-content;
+    gap: 6px;
+}
+
+.project-gallery {
+    flex: 1.2;
     display: flex;
-    gap: 2% 0;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-preview img, .thumbnail-grid img {
+    border-radius: 8px;
+    width: 100%;
 }
 
 .thumbnail-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
 /******* CONTACT SECTION *****/
@@ -234,6 +286,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 80px 8% 40px 8%;
 }
 
 #contact h2 {
@@ -244,7 +297,7 @@ nav ul li a:hover {
 
 #contact p {
     color: var(--text-secondary);
-    max-width: 380px;
+    max-width: 450px;
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 50px;
@@ -252,14 +305,80 @@ nav ul li a:hover {
 
 .socials-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    gap: 25px;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .social-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.social-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/******* FOOTER SECTION *******/
+footer {
+    padding: 0 8% 40px 8%;
+    background-color: var(--bg-color);
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-line {
+    border: none;
+    border-top: 1px solid #222222;
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.github-icon img {
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.3s;
+}
+
+.github-icon img:hover {
+    opacity: 0.8;
+}
+
+/******* RESPONSIVE DESIGN (MOBILE) *******/
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 120px;
+        gap: 40px;
+    }
+    .avatar-circle {
+        width: 280px;
+        height: 280px;
+    }
+    .project-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .socials-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
 }
