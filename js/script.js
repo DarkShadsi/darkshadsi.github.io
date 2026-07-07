@@ -2,19 +2,41 @@
 const projects = [
     {
         title: "Study Assistant App",
-        description: "A clean JavaFX and Maven desktop application built to streamline flashcard learning, featuring interactive lo-fi UI elements and efficient study workflows.",
+        description: "Study Assistant App is a JavaFX desktop application" +
+            " for creating and managing flashcard decks, studying with type-in quizzes, " +
+            "and tracking session progress - all backed by a MySQL database.",
         visitLink: "https://github.com/DarkShadsi/studybuddy.git",
         mainImage: "assets/images/projects/SAA-1.png",
         thumb1: "assets/images/projects/SAA-2.png",
         thumb2: "assets/images/projects/SAA-3.png"
     },
     {
-        title: "Project Title",
-        description: "Project Title goes here...",
-        visitLink: "https://github.com/DarkShadsi/studybuddy.git",
-        mainImage: "assets/images/projects/project1-image1.png",
-        thumb1: "assets/images/projects/project1-image2.png",
-        thumb2: "assets/images/projects/project1-image3.png"
+        title: "Hack Quest",
+        description: "A Java-based educational game that tests programming " +
+            "knowledge through interactive quizzes.",
+        visitLink: "https://github.com/DarkShadsi/Hack-Quest-version-2.git",
+        mainImage: "assets/images/projects/HQ-1.png",
+        thumb1: "assets/images/projects/HQ-2.png",
+        thumb2: "assets/images/projects/HQ-3.png"
+    },
+    {
+        title: "Maze of Missteps",
+        description: "In every turn lies another mistake. A java maze-game " +
+            "where your primary goal is to collect keys and escape the " +
+            "maze before the monsters get you.",
+        visitLink: "https://github.com/DarkShadsi/Maze-of-Missteps.git",
+        mainImage: "assets/images/projects/MoM-1.png",
+        thumb1: "assets/images/projects/MoM-2.png",
+        thumb2: "assets/images/projects/MoM-3.png"
+    },
+    {
+        title: "Snake Game",
+        description: "A simple Java Snake game testing out my skills " +
+            "on OOP and Java threads and Paint components.",
+        visitLink: "https://github.com/DarkShadsi/Snake-Game.git",
+        mainImage: "assets/images/projects/SnakeGame-1.png",
+        thumb1: "assets/images/projects/SnakeGame-2.png",
+        thumb2: "assets/images/projects/SnakeGame-3.png"
     }
 ];
 
