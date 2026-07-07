@@ -140,6 +140,57 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+/******** ANIMATIONS ************/
+
+.project-card {
+    will-change: transform, opacity;
+}
+
+.deck-slide-next {
+    animation: slideOffDeckRight 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.deck-slide-prev {
+    animation: slideOffDeckLeft 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.deck-reveal {
+    animation: deckRevealIntro 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.12) forwards;
+}
+
+@keyframes slideOffDeckRight {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(260px, 18px) rotate(12deg) scale(0.94);
+    }
+}
+
+@keyframes slideOffDeckLeft {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-260px, 18px) rotate(-12deg) scale(0.94);
+    }
+}
+
+@keyframes deckRevealIntro {
+    0% {
+        opacity: 0;
+        transform: translateY(14px) scale(0.94) rotate(-1deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
 .hero-content p {
     color: var(--text-secondary);
     max-width: 520px;

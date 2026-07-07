@@ -69,39 +69,37 @@
     <section id="projects">
         <h2>My Projects</h2>
         <div class="project-slider-container">
-            <a href="#" class="slider-arrow arrow-left" aria-label="Previous Project">
+            <a href="#" id="prev-btn" class="slider-arrow arrow-left" aria-label="Previous Project">
                 <img src="assets/images/prev-button.png" alt="Previous Project">
             </a>
 
-            <div class="project-card">
+            <div class="project-card" id="project-card">
                 <div class="project-info">
-                    <h3>Project Title</h3>
-                    <p>
-                        A description of the software.
-                        Its purpose, tech stack, and
-                        other related info.
-                    </p>
-                    <a href="#" class="btn-visit">
+                    <h3 id="project-title">Project Title</h3>
+                    <p id="project-desc">Project description goes here...</p>
+                    <a href="#" id="project-link" class="btn-visit" target="_blank">
                         <span class="icon">🔗</span> visit
                     </a>
                 </div>
 
                 <div class="project-gallery">
                     <div class="main-preview">
-                        <img src="assets/images/project1-image1.png" alt="Project one main preview.">
+                        <img id="main-img" src="" alt="Main Preview">
                     </div>
                     <div class="thumbnail-grid">
-                        <img src="assets/images/project1-image2.png" alt="Project one preview 2.">
-                        <img src="assets/images/project1-image3.png" alt="Project one preview 3.">
+                        <img id="thumb-1" src="" alt="Preview 2">
+                        <img id="thumb-2" src="" alt="Preview 3">
                     </div>
                 </div>
             </div>
 
-            <a href="#" class="slider-arrow right-arrow" aria-label="Next Project">
+            <a href="#" id="next-btn" class="slider-arrow right-arrow" aria-label="Next Project">
                 <img src="assets/images/next-button.png" alt="Next Project">
             </a>
         </div>
     </section>
+
+    <script src="js/script.js"></script>
 
     <section id="contact">
         <h2>Contact Me</h2>
