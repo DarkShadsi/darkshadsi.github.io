@@ -58,9 +58,15 @@ function updateProject(index, direction) {
 
     if (direction === "none") {
         card.classList.remove("deck-slide-next", "deck-slide-prev", "deck-reveal");
-        void card.offsetWidth;
-        injectProjectData(index);
-        card.classList.add("deck-reveal");
+
+        // Show loading state right away on initial load
+        card.classList.add("is-loading");
+
+        preloadProjectImages(index).then(() => {
+            injectProjectData(index);
+            card.classList.remove("is-loading");
+            card.classList.add("deck-reveal");
+        });
         return;
     }
 
@@ -77,16 +83,22 @@ function updateProject(index, direction) {
         if (e.target !== card) return;
         card.removeEventListener("animationend", onExitEnd);
 
-        injectProjectData(index);
+        // Indicate loading state during transit
+        card.classList.add("is-loading");
 
-        card.classList.remove(exitClass);
-        void card.offsetWidth;
-        card.classList.add("deck-reveal");
+        // Wait until all 3 project images finish fetching over network
+        preloadProjectImages(index).then(() => {
+            injectProjectData(index);
 
-        card.addEventListener("animationend", function onRevealEnd(e2) {
-            if (e2.target !== card) return;
-            card.removeEventListener("animationend", onRevealEnd);
-            isAnimating = false;
+            card.classList.remove(exitClass, "is-loading");
+            void card.offsetWidth;
+            card.classList.add("deck-reveal");
+
+            card.addEventListener("animationend", function onRevealEnd(e2) {
+                if (e2.target !== card) return;
+                card.removeEventListener("animationend", onRevealEnd);
+                isAnimating = false;
+            });
         });
     });
 }
@@ -119,4 +131,30 @@ function injectProjectData(index) {
     mainImg.src = project.mainImage;
     thumb1.src = project.thumb1;
     thumb2.src = project.thumb2;
+}
+
+async function preloadProjectImages(index) {
+    const project = projects[index];
+    await Promise.all([
+        preloadImage(project.mainImage),
+        preloadImage(project.thumb1),
+        preloadImage(project.thumb2)
+    ]);
+}
+
+function preloadImage(url) {
+    return new Promise((resolve) => {
+        if (!url) return resolve(false);
+
+        const img = new Image();
+        img.src = url;
+
+        if (img.complete) {
+            resolve(true);
+            return;
+        }
+
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+    });
 }
