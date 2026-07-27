@@ -80,6 +80,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     z-index: 1000;
     background-color: var(--bg-color);
 }
@@ -540,6 +541,28 @@ footer {
         width: 280px;
         height: 280px;
     }
+
+    header {
+        padding: 12px 4%;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    nav ul {
+        gap: 15px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav ul li a {
+        font-size: 0.82rem;
+    }
+
     .project-card {
         flex-direction: column;
         padding: 20px;
@@ -548,5 +571,15 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.75rem;
     }
 }
