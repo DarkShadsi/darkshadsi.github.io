@@ -363,7 +363,8 @@ nav ul li a:hover {
     width: 100%;
 }
 
-.img-wrapper {
+.main-preview,
+.thumbnail-container {
     position: relative;
     overflow: hidden;
     background-color: #1e1e24;
@@ -374,7 +375,8 @@ nav ul li a:hover {
     transition: opacity 0.2s ease;
 }
 
-#project-card.is-loading .img-wrapper::after {
+#project-card.is-loading .main-preview::after,
+#project-card.is-loading .thumbnail-container::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -421,10 +423,7 @@ nav ul li a:hover {
 
 .thumbnail-grid img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    background-color: #161616;
-    border: 1px solid var(--text-secondary);
-    border-radius: 8px;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -432,6 +431,7 @@ nav ul li a:hover {
     width: 100%;
     aspect-ratio: 16 / 9;
     background-color: var(--bg-color);
+    border: 1px solid var(--text-secondary);
     border-radius: 8px;
     overflow: hidden;
 

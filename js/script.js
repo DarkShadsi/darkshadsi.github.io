@@ -59,11 +59,10 @@ function updateProject(index, direction) {
     if (direction === "none") {
         card.classList.remove("deck-slide-next", "deck-slide-prev", "deck-reveal");
 
-        // Show loading state right away on initial load
+        injectProjectData(index);
         card.classList.add("is-loading");
 
         preloadProjectImages(index).then(() => {
-            injectProjectData(index);
             card.classList.remove("is-loading");
             card.classList.add("deck-reveal");
         });
@@ -83,22 +82,20 @@ function updateProject(index, direction) {
         if (e.target !== card) return;
         card.removeEventListener("animationend", onExitEnd);
 
-        // Indicate loading state during transit
+        card.classList.remove(exitClass);
+        injectProjectData(index);
         card.classList.add("is-loading");
+        void card.offsetWidth;
+        card.classList.add("deck-reveal");
 
-        // Wait until all 3 project images finish fetching over network
+        card.addEventListener("animationend", function onRevealEnd(e2) {
+            if (e2.target !== card) return;
+            card.removeEventListener("animationend", onRevealEnd);
+            isAnimating = false;
+        });
+
         preloadProjectImages(index).then(() => {
-            injectProjectData(index);
-
-            card.classList.remove(exitClass, "is-loading");
-            void card.offsetWidth;
-            card.classList.add("deck-reveal");
-
-            card.addEventListener("animationend", function onRevealEnd(e2) {
-                if (e2.target !== card) return;
-                card.removeEventListener("animationend", onRevealEnd);
-                isAnimating = false;
-            });
+            card.classList.remove("is-loading");
         });
     });
 }
